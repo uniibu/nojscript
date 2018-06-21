@@ -1,0 +1,32 @@
+{
+  "name": "nojscript",
+  "version": "1.0.0",
+  "description": "disables running scripts on console",
+  "private": false,
+  "engines": {
+    "node": ">=8"
+  },
+  "main": "dist/nojscript.min.js",
+  "files": ["dist/*"],
+  "keywords": [
+    "disable javascript console"
+  ],
+  "author": "Uni Sayo <unibtc@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/uniibu/nojscript",
+  "bugs": {
+    "url": "https://github.com/uniibu/nojscript/issues"
+  },
+  "homepage": "https://github.com/uniibu/nojscript#readme",
+  "scripts": {
+    "build:minjs": "BABEL_ENV=minify babel ./src --out-file ./dist/nojscript.min.js",
+    "build:js": "BABEL_ENV=production babel ./src --out-file ./dist/nojscript.js",
+    "prebuild": "rm -rf ./dist && mkdir dist",
+    "build": "yarn build:minjs && yarn build:js"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-minify": "^0.4.3"
+  }
+}

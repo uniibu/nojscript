@@ -1,0 +1,15 @@
+{
+  "env": {
+    "minify": {
+        "presets": [
+            ["env", { "modules": false }],
+            "minify"
+        ]
+    },
+    "production": {
+        "presets": [
+            ["env", { "modules": false }]
+        ]
+    }
+  }
+}
